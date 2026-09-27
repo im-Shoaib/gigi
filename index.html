@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIGI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700;900&family=Pacifico&family=Lobster&family=Montserrat:wght@600;700;800&family=Roboto+Slab:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head> 
+<body>
+
+        <div class="landing-overlay" id="landing-overlay">
+        <img src="assets/landing_logo.svg" alt="Logo" class="landing-logo">
+    </div>
+
+    <!-- Header Section -->
+        <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            
+            <!-- Left: Hamburger Icon -->
+            <a href="#" class="header-icon" id="menu-btn" aria-label="Abrir menú">
+                <img src="assets/HAMBURGER.svg" alt="Menu" class="icon-img">
+            </a>
+
+            <!-- Center: Logo Image -->
+            <a href="index.html" class="header-logo" aria-label="Inicio">
+                <img src="assets/logo.svg" alt="Logo" class="logo-img">
+            </a>
+
+            <!-- Right: Popup Trigger Icon -->
+            <a href="#" class="header-icon" id="popup-btn" aria-label="Abrir información">
+                <img src="assets/PIDE.svg" alt="Info" class="icon-img">
+            </a>
+            
+        </div>
+
+        <!-- Dropdown Menu -->
+        <nav class="dropdown-menu" id="dropdown">
+            <ul>
+                <li><a href="menu.html">VER CARTA</a></li>
+                <li><a href="events.html">EVENTOS</a></li>
+                <li><a href="about.html">CONÓCENOS</a></li>
+                <li><a href="contact.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-typography">
+            <img src="assets/ENJOYWEB.svg" alt="Enjoy the Gourmet Pizza Sandwich" class="hero-typography-img">
+        </div>
+        
+        <div class="hero-image-container">
+            <a href="#" class="hero-image-link" id="hero-popup-btn">
+                <img src="assets/PIDE.svg" alt="Pide ahora" class="hero-image">
+            </a>
+        </div>
+    </section>
+
+   <section class="sec2-container">
+  <!-- Left Side Area -->
+  <div class="sec2-left-area">
+    <!-- Top Left Box (Self-made Card with editable text number + pattern image) -->
+    <div class="sec2-phone-box">
+      <div class="sec2-phone-number">637 683 347</div>
+      <div class="sec2-phone-pattern-box">
+        <img src="assets/boxed.svg" alt="Pattern" class="sec2-phone-pattern-img">
+      </div>
+    </div>
+
+    <!-- Main Title Graphics (Home OF THE Panuozzo Image) -->
+    <div class="sec2-title-box">
+      <img src="assets/home of the panuozzo.svg" alt="Home of the Panuozzo" class="sec2-title-img">
+    </div>
+  </div>
+
+  <!-- Center Area (Map Card Image with Overlay) -->
+  <div class="sec2-center-area">
+    <div class="sec2-map-box">
+      <img src="assets/MAP.svg" alt="Map Location" class="sec2-map-img">
+      <!-- Extra Image inside Map Box (Position adjustable) -->
+      <img src="assets/logo.svg" alt="Map Pin Overlay" class="sec2-map-overlay-img">
+    </div>
+  </div>
+
+  <!-- Right Side Area -->
+  <div class="sec2-right-area">
+    <!-- Vertical Address Text Split in 2 Lines -->
+    <div class="sec2-vertical-text">
+      <span>CALLE SAN VICENTE</span>
+      <span>MARTIR 41</span>
+    </div>
+
+    <!-- Bottom Schedule Badge (Text Based - Absolute Positioned) -->
+    <div class="sec2-hours-badge">
+      <span class="sec2-hours-line1">TODA LA</span>
+      <span class="sec2-hours-line2">SEMANA</span>
+      <span class="sec2-hours-line3">13H-22H</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec3-container">
+  <!-- 3 Image Cards Container -->
+  <div class="sec3-cards-wrapper">
+    <div class="sec3-card">
+      <img src="your-image-1.jpg" alt="Gallery Image 1" class="sec3-card-img" style="display:none;">
+    </div>
+    <div class="sec3-card">
+      <img src="your-image-2.jpg" alt="Gallery Image 2" class="sec3-card-img" style="display:none;">
+    </div>
+    <div class="sec3-card">
+      <img src="your-image-3.jpg" alt="Gallery Image 3" class="sec3-card-img" style="display:none;">
+    </div>
+  </div>
+
+  <!-- Footer Row -->
+  <div class="sec3-footer">
+    <!-- Instagram Link -->
+    <a href="#" class="sec3-footer-left">
+      <svg class="sec3-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+      <span>@GIGIPANUOZZI</span>
+    </a>
+
+    <!-- Center Text -->
+    <div class="sec3-footer-center">
+      GIGI ITALIAN FOOD SL ®
+    </div>
+
+    <!-- Right Text -->
+    <div class="sec3-footer-right">
+      <span>CREATIVE BY:</span>
+      <span>SEBASTIAN ADAMES</span>
+    </div>
+  </div>
+</section>
+
+
+        <!-- Popup Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            
+            <!-- Heading with Icons -->
+            <div class="modal-heading-container">
+                <img src="assets/icon1.svg" alt="Icon Left" class="modal-icon">
+                <h2 class="modal-title">PIDE CON UBER EATS!</h2>
+                <img src="assets/icon2.svg" alt="Icon Right" class="modal-icon">
+            </div>
+            
+            <!-- Centered Image Below -->
+            <div class="modal-image-container">
+                <img src="assets/uber-eats.png" alt="Promo" class="modal-center-img">
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

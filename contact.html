@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - gigi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
+
+/* Main Page Container with Pure CSS Gingham/Checkered Pattern */
+.contact-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+  /* Italian Picnic / Gingham Pattern Background */
+  background-color: #FFF0D0;
+  background-image: 
+    linear-gradient(90deg, rgba(35, 67, 37, 0.75) 50%, transparent 50%),
+    linear-gradient(rgba(35, 67, 37, 0.75) 50%, transparent 50%);
+  background-size: 100px 100px;
+}
+
+/* Wrapper for Center Alignment */
+.contact-wrapper {
+  width: 100%;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Common Card Styling */
+.contact-card {
+  width: 100%;
+  border: 5px solid #CEA248; /* Gold Border */
+  border-radius: 35px;
+  padding: 35px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Subheadings for both cards */
+.contact-card-subheading {
+  color: #CEA248; /* Gold */
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Top Card Specifics */
+.contact-card-dark {
+  background-color: #234325; /* Dark Green */
+}
+
+.contact-email-link {
+  color: #FFFFFF; /* White */
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  word-break: break-all;
+  transition: opacity 0.2s ease;
+}
+
+.contact-email-link:hover {
+  opacity: 0.85;
+}
+
+/* Bottom Card Specifics */
+.contact-card-light {
+  background-color: #FFF0D0; /* Cream */
+}
+
+.contact-info-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.contact-phone {
+  color: #234325; /* Dark Green */
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.contact-instagram {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #234325; /* Dark Green */
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.contact-ig-icon {
+  width: 34px;
+  height: 34px;
+  color: #234325;
+}
+
+
+/* Tablet View (Max 850px) */
+@media (max-width: 850px) {
+  .contact-wrapper {
+    max-width: 650px;
+  }
+
+  .contact-email-link {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .contact-phone,
+  .contact-instagram {
+    font-size: 24px;
+  }
+
+  .contact-ig-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contact-info-row {
+    gap: 30px;
+  }
+}
+
+/* Mobile View (Max 600px) */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 30px 15px;
+    background-size: 60px 60px; /* Scale down grid for small screens */
+  }
+
+  .contact-card {
+    padding: 25px 18px;
+    border-radius: 25px;
+    border-width: 4px;
+  }
+
+  .contact-card-subheading {
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .contact-email-link {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-info-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-phone,
+  .contact-instagram {
+    font-size: 22px;
+  }
+
+  .contact-ig-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ==================== GIGI SIGNUP MODAL ==================== */
+
+.gigi-signup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.gigi-signup-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gigi-signup-card {
+  position: relative;
+  width: 70%;
+  
+  background-color: #FFF0D0;
+  border: 4px solid #CEA248;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  text-align: center;
+  transform: scale(0.92) translateY(12px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gigi-signup-backdrop.active .gigi-signup-card {
+  transform: scale(1) translateY(0);
+}
+
+.gigi-signup-close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #CEA248;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.gigi-signup-close:hover {
+  color: #b88e38;
+  transform: scale(1.15);
+}
+
+.gigi-signup-title {
+  color: #284A27;
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 8px 0 16px;
+}
+
+.gigi-signup-subtitle {
+  color: #CEA248;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 28px;
+}
+
+.gigi-signup-form {
+  width: 100%;
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+.gigi-signup-input-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #CEA248;
+  border-radius: 16px;
+  padding: 14px 22px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.gigi-signup-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #284A27;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-right: 8px;
+}
+
+.gigi-signup-input::placeholder {
+  color: #284A27;
+  opacity: 0.9;
+  font-weight: 900;
+}
+
+.gigi-signup-submit {
+  background: none;
+  border: none;
+  color: #284A27;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.gigi-signup-submit svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.gigi-signup-submit:hover {
+  transform: translateX(4px);
+}
+
+.gigi-signup-feedback {
+  min-height: 18px;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #c0392b;
+}
+
+.gigi-signup-success {
+  padding: 16px 0;
+}
+
+.gigi-signup-check {
+  width: 48px;
+  height: 48px;
+  background-color: #284A27;
+  color: #FFF0D0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.gigi-signup-success-title {
+  color: #284A27;
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.gigi-signup-success-sub {
+  color: #CEA248;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.gigi-signup-reset {
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: #284A27;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.gigi-signup-reset:hover { opacity: 0.7; }
+
+@keyframes gigiModalShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.gigi-signup-card.shake {
+  animation: gigiModalShake 0.4s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .gigi-signup-card {
+    padding: 28px 20px;
+    border-radius: 22px;
+    border-width: 3px;
+  }
+  .gigi-signup-card{
+    width: 100%;
+  }
+  .gigi-signup-title { font-size: 1.8rem; margin-bottom: 12px; }
+  .gigi-signup-subtitle { font-size: 0.7rem; margin-bottom: 20px; }
+  .gigi-signup-input-wrap { padding: 12px 16px; border-radius: 14px; }
+  .gigi-signup-input { font-size: 0.72rem; letter-spacing: 0.5px; }
+  .gigi-signup-submit svg { width: 22px; height: 22px; }
+  .gigi-signup-close { font-size: 26px; top: 10px; right: 14px; }
+  .gigi-signup-check { width: 40px; height: 40px; font-size: 1.3rem; }
+  .gigi-signup-success-title { font-size: 1.05rem; }
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Left: Hamburger Icon -->
+            <a href="#" class="header-icon" id="menu-btn" aria-label="Abrir menú">
+                <img src="assets/HAMBURGER.svg" alt="Menu" class="icon-img">
+            </a>
+            <!-- Center: Logo Image -->
+            <a href="index.html" class="header-logo" aria-label="Inicio">
+                <img src="assets/logo.svg" alt="Logo" class="logo-img">
+            </a>
+            <!-- Right: Popup Trigger Icon -->
+            <a href="#" class="header-icon" id="popup-btn" aria-label="Abrir información">
+                <img src="assets/PIDE.svg" alt="Info" class="icon-img">
+            </a>
+        </div>
+        <!-- Dropdown Menu -->
+        <nav class="dropdown-menu" id="dropdown">
+            <ul>
+                <li><a href="menu.html">VER CARTA</a></li>
+                <li><a href="events.html">EVENTOS</a></li>
+                <li><a href="about.html">CONÓCENOS</a></li>
+                <li><a href="contact.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-container">
+  <div class="contact-wrapper">
+
+    <!-- Top Card: Email / Careers -->
+    <div class="contact-card contact-card-dark">
+      <h3 class="contact-card-subheading">QUIERES TRABAJAR CON NOSOTROS?</h3>
+      <a href="mailto:gigiitalianfood@gmail.com" class="contact-email-link">
+        GIGIITALIANFOOD@GMAIL.COM
+      </a>
+    </div>
+
+    <!-- Bottom Card: General Contact -->
+    <div class="contact-card contact-card-light">
+      <h3 class="contact-card-subheading">CONTACTO GENERAL</h3>
+      <div class="contact-info-row">
+        <a href="tel:637683347" class="contact-phone">
+          637 683 347
+        </a>
+        <a href="https://instagram.com/gigipanuozzi" target="_blank" rel="noopener noreferrer" class="contact-instagram">
+          <svg class="contact-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@GIGIPANUOZZI</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Popup Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <div class="modal-heading-container">
+                <img src="assets/icon1.svg" alt="Icon Left" class="modal-icon">
+                <h2 class="modal-title">PIDE CON UBER EATS!</h2>
+                <img src="assets/icon2.svg" alt="Icon Right" class="modal-icon">
+            </div>
+            <div class="modal-image-container">
+                <img src="assets/uber-eats.png" alt="Promo" class="modal-center-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== GIGI SIGNUP MODAL ==================== -->
+<div id="gigiSignupModal" class="gigi-signup-backdrop" onclick="handleSignupBackdropClick(event)">
+    <div class="gigi-signup-card" role="dialog" aria-modal="true" aria-labelledby="gigiSignupTitle">
+        <button type="button" class="gigi-signup-close" onclick="closeSignupModal()" aria-label="Cerrar modal">✕</button>
+
+        <h2 id="gigiSignupTitle" class="gigi-signup-title">ÚNETE A GIGI!</h2>
+        <p class="gigi-signup-subtitle">
+            RECIBE DESCUENTOS, AVISOS SOBRE PANUOZZOS DE TEMPORADA Y NUEVAS INCORPORACIONES DE PRODUCTOS A NUESTRA DISPENSA
+        </p>
+
+        <form id="gigiSignupForm" class="gigi-signup-form" onsubmit="handleSignupSubmit(event)">
+            <div class="gigi-signup-input-wrap">
+                <input
+                    type="email"
+                    id="gigiSignupEmail"
+                    class="gigi-signup-input"
+                    placeholder="INTRODUCE TU CORREO ELECTRÓNICO..."
+                    autocomplete="email"
+                    required
+                />
+                <button type="submit" class="gigi-signup-submit" aria-label="Enviar correo">
+                    <svg viewBox="0 0 24 24" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="gigiSignupFeedback" class="gigi-signup-feedback"></div>
+        </form>
+
+        <div id="gigiSignupSuccess" class="gigi-signup-success" style="display:none;">
+            <div class="gigi-signup-check">✓</div>
+            <p class="gigi-signup-success-title">¡TE HAS UNIDO CON ÉXITO!</p>
+            <p class="gigi-signup-success-sub">Revisa tu bandeja de entrada para recibir tu sorpresa de bienvenida.</p>
+            <button type="button" class="gigi-signup-reset" onclick="resetSignupModal()">Volver a probar</button>
+        </div>
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+   
+<script>
+    // ===== GIGI SIGNUP MODAL (Contact page) =====
+    document.addEventListener('DOMContentLoaded', () => {
+        const signupModal = document.getElementById('gigiSignupModal');
+        if (!signupModal) return;
+
+        // Popup auto-show on page load (small delay so page paints first)
+        setTimeout(() => {
+            signupModal.classList.add('active');
+        }, 400);
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && signupModal.classList.contains('active')) {
+                closeSignupModal();
+            }
+        });
+    });
+
+    function closeSignupModal() {
+        const m = document.getElementById('gigiSignupModal');
+        if (m) m.classList.remove('active');
+    }
+
+    function handleSignupBackdropClick(e) {
+        if (e.target.id === 'gigiSignupModal') closeSignupModal();
+    }
+
+    function handleSignupSubmit(e) {
+        e.preventDefault();
+        const input     = document.getElementById('gigiSignupEmail');
+        const feedback  = document.getElementById('gigiSignupFeedback');
+        const form      = document.getElementById('gigiSignupForm');
+        const success   = document.getElementById('gigiSignupSuccess');
+        const card      = document.querySelector('.gigi-signup-card');
+        const email     = input.value.trim();
+
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!valid) {
+            card.classList.add('shake');
+            feedback.textContent = 'POR FAVOR, INTRODUCE UN CORREO VÁLIDO.';
+            setTimeout(() => card.classList.remove('shake'), 400);
+            return;
+        }
+
+        feedback.textContent = '';
+        form.style.display = 'none';
+        success.style.display = 'block';
+    }
+
+    function resetSignupModal() {
+        const form      = document.getElementById('gigiSignupForm');
+        const success   = document.getElementById('gigiSignupSuccess');
+        const feedback  = document.getElementById('gigiSignupFeedback');
+        const input     = document.getElementById('gigiSignupEmail');
+        form.reset();
+        form.style.display = '';
+        success.style.display = 'none';
+        feedback.textContent = '';
+        input.focus();
+    }
+</script>
+</body>
+</html>

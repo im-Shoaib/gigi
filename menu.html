@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIGI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Comfortaa:wght@700;900&family=Pacifico&family=Lobster&family=Montserrat:wght@600;700;800&family=Roboto+Slab:wght@700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+
+<body>
+
+    
+
+    <!-- Header Section -->
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+
+            <!-- Left: Hamburger Icon -->
+            <a href="#" class="header-icon" id="menu-btn" aria-label="Abrir menú">
+                <img src="assets/HAMBURGER.svg" alt="Menu" class="icon-img">
+            </a>
+
+            <!-- Center: Logo Image -->
+            <a href="index.html" class="header-logo" aria-label="Inicio">
+                <img src="assets/logo.svg" alt="Logo" class="logo-img">
+            </a>
+
+            <!-- Right: Popup Trigger Icon -->
+            <a href="#" class="header-icon" id="popup-btn" aria-label="Abrir información">
+                <img src="assets/PIDE.svg" alt="Info" class="icon-img">
+            </a>
+
+        </div>
+
+        <!-- Dropdown Menu -->
+        <nav class="dropdown-menu" id="dropdown">
+            <ul>
+                <li><a href="menu.html">VER CARTA</a></li>
+                <li><a href="events.html">EVENTOS</a></li>
+                <li><a href="about.html">CONÓCENOS</a></li>
+                <li><a href="contact.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="menu-background" style="padding-bottom: 0;">
+        <div class="menu-content-container">
+
+            <!-- SUBMENU OVER CHECKERED BACKGROUND -->
+            <nav class="submenu-container">
+                <ul class="submenu-list">
+                    <li><a href="#combos">COMBOS</a></li>
+                    <li><a href="#panuozzi">PANUOZZI</a></li>
+                    <li><a href="#build-your-own">BUILD YOUR OWN</a></li>
+                    <li><a href="#dolci">DOLCI</a></li>
+                    <li><a href="#bebidas">BEBIDAS</a></li>
+                </ul>
+            </nav>
+
+            <!-- GOLD COMBO CARD DESIGN CENTERED -->
+            <style>
+                :root {
+                    --green-dark: #2c3f24;
+                    --gold: #e2a83a;
+                    --gold-shadow: rgba(0, 0, 0, 0.35);
+                    --cream: #f4ead0;
+                    --photo-gray: #a9a9a9;
+                }
+
+                .gold-card-outer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    padding: 50px 20px;
+                    box-sizing: border-box;
+                    font-family: 'Baloo 2', sans-serif;
+                }
+
+                .card-wrap {
+                    position: relative;
+                    width: 440px;
+                    height: 200px;
+                    max-width: 100%;
+                }
+
+                /* Green burst badge on top-left */
+                .combo-badge {
+                    position: absolute;
+                    top: -40px;
+                    left: -55px;
+                    width: 130px;
+                    height: 130px;
+                    z-index: 10;
+                    transform: rotate(-25deg);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    filter: drop-shadow(-4px 5px 6px rgba(0,0,0,0.45));
+                }
+
+                .combo-badge .burst-bg {
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .combo-badge .badge-text {
+                    position: relative;
+                    z-index: 2;
+                    color: var(--gold);
+                    font-family: 'Baloo 2', sans-serif;
+                    font-weight: 800;
+                    font-size: 18px;
+                    letter-spacing: 0.5px;
+                    text-shadow: 1px 1.5px 0px #1a2e19;
+                }
+
+                /* "GIGI" brand title sitting ABOVE the base panel on the left */
+                .brand-above {
+                    position: absolute;
+                    top: 6px;
+                    left: 60px;
+                    width: 195px;
+                    text-align: center;
+                    z-index: 6;
+                    margin: 0;
+                    font-family: 'Roboto Slab', serif;
+                    font-weight: 800;
+                    font-size: 34px;
+                    letter-spacing: 2px;
+                    color: var(--gold);
+                    -webkit-text-stroke: 1.8px var(--green-dark);
+                    text-shadow: 2px 2px 0 var(--green-dark);
+                    line-height: 1;
+                }
+
+                /* Base panel (shorter left section) */
+                .panel-base {
+                    position: absolute;
+                    left: 0; right: 0;
+                    bottom: 0;
+                    height: 140px;
+                    border-radius: 24px;
+                }
+
+                /* Tall panel (taller right section) */
+                .panel-tall {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 195px;
+                    height: 200px;
+                    border-radius: 24px;
+                }
+
+                /* Smooth concave corner fillet connecting base to tall panel */
+                .panel-tall::before {
+                    content: '';
+                    position: absolute;
+                    left: -30px;
+                    bottom: 140px;
+                    width: 30px;
+                    height: 30px;
+                    background: transparent;
+                    border-bottom-right-radius: 18px;
+                    box-shadow: 10px 10px 0 10px var(--gold);
+                    pointer-events: none;
+                }
+
+                /* shadow copy: offset down-left (bottom-left shadow), darker gold, sits behind */
+                .layer-shadow {
+                    position: absolute;
+                    inset: 0;
+                    transform: translate(-8px, 8px);
+                }
+                .layer-shadow .panel-base,
+                .layer-shadow .panel-tall {
+                    background: var(--gold-shadow);
+                }
+                .layer-shadow .panel-tall::before {
+                    box-shadow: 10px 10px 0 10px var(--gold-shadow);
+                }
+
+                /* face copy: the actual visible gold panels */
+                .layer-face {
+                    position: absolute;
+                    inset: 0;
+                }
+                .layer-face .panel-base,
+                .layer-face .panel-tall {
+                    background: var(--gold);
+                }
+
+                .card-content {
+                    position: absolute;
+                    inset: 0;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    padding: 14px 16px 14px 48px;
+                    z-index: 5;
+                }
+
+                .card-left-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
+                    text-align: center;
+                    width: 210px;
+                    height: 120px;
+                }
+
+                .items {
+                    margin: 0 0 4px 0;
+                    padding: 0;
+                    list-style: none;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 1.3;
+                    color: var(--green-dark);
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+
+                .price {
+                    margin: 0;
+                    font-weight: 800;
+                    font-size: 30px;
+                    color: var(--cream);
+                    line-height: 1;
+                    text-align: center;
+                }
+
+                .photo {
+                    align-self: flex-end;
+                    width: 165px;
+                    height: 165px;
+                    background: var(--photo-gray);
+                    border-radius: 18px;
+                }
+
+                @media (max-width: 540px) {
+                    .gold-card-outer {
+                        transform: scale(0.85);
+                        transform-origin: top center;
+                        margin-bottom: -30px;
+                    }
+                }
+                @media (max-width: 420px) {
+                    .gold-card-outer {
+                        transform: scale(0.68);
+                        transform-origin: top center;
+                        margin-bottom: -70px;
+                    }
+                }
+            </style>
+
+            <div class="gold-card-outer">
+                <div class="card-wrap">
+
+                    <div class="combo-badge">
+                        <svg class="burst-bg" viewBox="0 0 150 150">
+                            <path d="M 80.0,22.1 Q 85.0,31.1 93.5,25.1 Q 101.9,19.1 102.5,29.5 Q 103.1,39.8 113.3,38.1 Q 123.5,36.3 119.5,45.9 Q 115.5,55.5 125.5,58.3 Q 135.4,61.2 127.7,68.1 Q 120.0,75.0 127.7,81.9 Q 135.4,88.8 125.5,91.7 Q 115.5,94.5 119.5,104.1 Q 123.5,113.7 113.3,111.9 Q 103.1,110.2 102.5,120.5 Q 101.9,130.9 93.5,124.9 Q 85.0,118.9 80.0,127.9 Q 75.0,137.0 70.0,127.9 Q 65.0,118.9 56.5,124.9 Q 48.1,130.9 47.5,120.5 Q 46.9,110.2 36.7,111.9 Q 26.5,113.7 30.5,104.1 Q 34.5,94.5 24.5,91.7 Q 14.6,88.8 22.3,81.9 Q 30.0,75.0 22.3,68.1 Q 14.6,61.2 24.5,58.3 Q 34.5,55.5 30.5,45.9 Q 26.5,36.3 36.7,38.1 Q 46.9,39.8 47.5,29.5 Q 48.1,19.1 56.5,25.1 Q 65.0,31.1 70.0,22.1 Q 75.0,13.0 80.0,22.1 Z" fill="#243b1d" stroke="#243b1d" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+                        </svg>
+                        <span class="badge-text">COMBO!</span>
+                    </div>
+
+                    <h1 class="brand-above">GIGI</h1>
+
+                    <div class="layer-shadow">
+                        <div class="panel-base"></div>
+                        <div class="panel-tall"></div>
+                    </div>
+
+                    <div class="layer-face">
+                        <div class="panel-base"></div>
+                        <div class="panel-tall"></div>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="card-left-info">
+                            <ul class="items">
+                                <li>PANUOZZO</li>
+                                <li>BEBIDA</li>
+                                <li>POSTRE</li>
+                            </ul>
+                            <p class="price">11.9€</p>
+                        </div>
+                        <div class="photo"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <style>
+                .custom-cards-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 80px;
+                    padding: 40px 20px;
+                    flex-wrap: wrap;
+                }
+                .custom-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 320px;
+                }
+                .custom-placeholder {
+                    width: 100%;
+                    height: 180px;
+                    background-color: #999999;
+                    border-radius: 20px;
+                    margin-bottom: 20px; /* Add space between placeholder and description card */
+                    z-index: 1;
+                    position: relative;
+                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
+                }
+                .custom-description {
+                    background-color: #FFF0D0;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border-radius: 20px;
+                    padding: 15px 20px;
+                    z-index: 2;
+                    position: relative;
+                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
+                    font-family: 'Montserrat', sans-serif;
+                }
+                .custom-description.gold {
+                    background-color: #CEA248;
+                }
+                .custom-description.gold .custom-desc-header {
+                    color: #FFFFFF;
+                }
+                .custom-description.gold .custom-ingredient {
+                    color: #FFFFFF;
+                }
+                .custom-description.gold .custom-ingredient::before {
+                    background-color: #284A27;
+                }
+                .custom-description.gold .custom-price {
+                    color: #284A27;
+                }
+                .custom-desc-header {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: #284A27;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .custom-desc-body {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                }
+                .custom-ingredients-col {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .custom-ingredient {
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    display: flex;
+                    align-items: center;
+                }
+                .custom-ingredient::before {
+                    content: '';
+                    display: inline-block;
+                    width: 5px;
+                    height: 5px;
+                    background-color: #CEA248;
+                    border-radius: 50%;
+                    margin-right: 6px;
+                }
+                .custom-price-col {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                }
+                .custom-price {
+                    font-size: 1.8rem;
+                    font-weight: 900;
+                    color: #CEA248;
+                    line-height: 1;
+                    margin-top: 5px;
+                }
+                .ingredient-row {
+                    display: flex;
+                    gap: 15px;
+                }
+            </style>
+
+            <div class="custom-cards-container">
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            <span>🌿</span> CAPRESE <span>🌿</span>
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Tomate All'antica</span>
+                                    <span class="custom-ingredient">Rúcula</span>
+                                </div>
+                                <span class="custom-ingredient">Mozzarella Fior di Latte</span>
+                                <span class="custom-ingredient">Pesto alla Genovese casero</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">6.9€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            CLASSICO
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <span class="custom-ingredient">Tomate All'antica</span>
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Provolone</span>
+                                    <span class="custom-ingredient">Rúcula</span>
+                                </div>
+                                <span class="custom-ingredient">Prosciutto Cotto</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.3€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            <span>🌿</span> GIARDINO <span>🌿</span>
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Tomate All'antica</span>
+                                    <span class="custom-ingredient">Calabacin</span>
+                                </div>
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Ricotta</span>
+                                    <span class="custom-ingredient">Rúcula</span>
+                                    <span class="custom-ingredient">Albahaca</span>
+                                </div>
+                                <span class="custom-ingredient">Pesto alla Genovese casero</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.6€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            CESARE
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Pollo Empanado</span>
+                                    <span class="custom-ingredient">Lechuga</span>
+                                </div>
+                                <span class="custom-ingredient">Salsa Cesar Casera</span>
+                                <span class="custom-ingredient">Grana Padano</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.9€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            <span>🌿</span> DANTE <span>🌿</span>
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Spianata Picante</span>
+                                    <span class="custom-ingredient">Ricotta</span>
+                                </div>
+                                <span class="custom-ingredient">Pimiento Rojo al horno</span>
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Miel</span>
+                                    <span class="custom-ingredient">Aceite de Pepperoncini</span>
+                                </div>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.9€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            CRAZY NONNA
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <span class="custom-ingredient">Ragu alla Bolognese casero</span>
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Provolone</span>
+                                    <span class="custom-ingredient">Grana Padano</span>
+                                </div>
+                                <span class="custom-ingredient">Albahaca</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">8.5€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            CARBONARA
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <span class="custom-ingredient">Crema Carbonara casera</span>
+                                <span class="custom-ingredient">Mozzarella Fior di Latte</span>
+                                <span class="custom-ingredient">Bacon Napolitano</span>
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Grana Padano</span>
+                                    <span class="custom-ingredient">Albahaca</span>
+                                </div>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">8.5€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            VITELLO TONNATO
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <span class="custom-ingredient">Lonchas de ternera</span>
+                                <span class="custom-ingredient">Salsa Tonnata</span>
+                                <span class="custom-ingredient">Alcaparras</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">9.5€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            NEW YORKER
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Pastrami</span>
+                                    <span class="custom-ingredient">Rucula</span>
+                                </div>
+                                <span class="custom-ingredient">Salsa Mostaza cremosa</span>
+                                <span class="custom-ingredient">Pepinillos</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">10.5€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description">
+                        <div class="custom-desc-header">
+                            GIULIA
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <span class="custom-ingredient">Mortadella Bolognesa</span>
+                                <span class="custom-ingredient">Burrata ENTERA</span>
+                                <span class="custom-ingredient">Pesto alla Genovese casero</span>
+                                <span class="custom-ingredient">Pistacchio molido</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">10.5€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Build Your Own Section -->
+            <section id="build-your-own" class="menu-section" style="margin-top: 60px; display: flex; justify-content: center; padding: 0 20px;">
+                <div class="build-card" style="max-width: 680px; width: 100%; flex-wrap: wrap; gap: 30px; border: none; box-shadow: -6px 6px 0px rgba(0,0,0,0.35); margin: 0 auto; padding: 20px 30px;">
+                    <div class="build-text-area" style="text-align: center; align-items: center; flex: 1;">
+                        <div class="build-title" style="text-align: center;">BUILD YOUR OWN!</div>
+                        <div class="build-subtitle" style="text-align: center; margin-bottom: 10px;">CREA TU PANUOZZO PERSONALIZADO</div>
+                        <div class="build-elije" style="text-align: center; margin-bottom: 6px;">ELIJE TU:</div>
+                        <div class="build-options" style="text-align: center; align-items: center;">
+                            <span style="text-align: center;">PROTEINA - QUESO - VERDURA</span>
+                            <span style="text-align: center;">TOPPING - SALSA</span>
+                        </div>
+                    </div>
+                    <div class="build-image-placeholder" style="height: 220px;"></div>
+                </div>
+            </section>
+
+            <!-- Dolci Section -->
+            <div class="custom-cards-container">
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description gold">
+                        <div class="custom-desc-header">
+                            DI NUTELLA
+                        </div>
+                        <div class="custom-desc-body" style="align-items: center;">
+                            <div class="custom-ingredients-col">
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Nutella</span>
+                                    <span class="custom-ingredient">Azúcar glas</span>
+                                </div>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.30€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description gold">
+                        <div class="custom-desc-header">
+                            PISTACCHIO
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <span class="custom-ingredient">Crema di Pistacchio</span>
+                                <span class="custom-ingredient">Pistacchio molido</span>
+                                <span class="custom-ingredient">Azúcar glas</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.30€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description gold" style="min-height: 120px;">
+                        <div class="custom-desc-header">
+                            TIRAMISU
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <div class="ingredient-row">
+                                    <span class="custom-ingredient">Savoiardi</span>
+                                    <span class="custom-ingredient">Mascarpone</span>
+                                </div>
+                                <span class="custom-ingredient">Café Amaretto</span>
+                                <span class="custom-ingredient">ChocolateVALOR en polvo</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.30€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-card">
+                    <div class="custom-placeholder"></div>
+                    <div class="custom-description gold" style="min-height: 120px;">
+                        <div class="custom-desc-header">
+                            TARTA DE QUESO
+                        </div>
+                        <div class="custom-desc-body">
+                            <div class="custom-ingredients-col">
+                                <span class="custom-ingredient">Base de galleta</span>
+                                <span class="custom-ingredient">Queso "Cremet"</span>
+                            </div>
+                            <div class="custom-price-col">
+                                <span class="custom-price">7.30€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebidas Section -->
+            <div class="custom-cards-container" style="max-width: 700px; margin: 0 auto; gap: 40px 80px;">
+                <div class="custom-card" style="width: 250px;">
+                    <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">AGUA</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                    </div>
+                </div>
+                <div class="custom-card" style="width: 250px;">
+                    <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">REFRESCOS</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                    </div>
+                </div>
+                <div class="custom-card" style="width: 250px;">
+                    <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">CERVEZA</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                    </div>
+                </div>
+                <div class="custom-card" style="width: 250px;">
+                    <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">SPRITZ</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Row -->
+        <div class="sec3-footer" style="background: rgba(40, 74, 39, 0.28); border-radius: 16px; width: 100%; max-width: 1200px; margin: 40px auto 0 auto; justify-content: space-between; padding: 20px 24px 10px 24px;">
+            <!-- Instagram Link -->
+            <a href="#" class="sec3-footer-left">
+                <svg class="sec3-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@GIGIPANUOZZI</span>
+            </a>
+
+            <!-- Center Text -->
+            <div class="sec3-footer-center">
+                GIGI ITALIAN FOOD SL ®
+            </div>
+
+            <!-- Right Text -->
+            <div class="sec3-footer-right">
+                <span>CREATIVE BY:</span>
+                <span>SEBASTIAN ADAMES</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Popup Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+
+            <!-- Heading with Icons -->
+            <div class="modal-heading-container">
+                <img src="assets/icon1.svg" alt="Icon Left" class="modal-icon">
+                <h2 class="modal-title">PIDE CON UBER EATS!</h2>
+                <img src="assets/icon2.svg" alt="Icon Right" class="modal-icon">
+            </div>
+
+            <!-- Centered Image Below -->
+            <div class="modal-image-container">
+                <img src="assets/uber-eats.png" alt="Promo" class="modal-center-img">
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -392,7 +392,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Signaturide', sans-serif;
   overflow: hidden;
 
   clip-path: polygon(
@@ -654,7 +654,7 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Signaturide', sans-serif;
   position: relative;
   overflow: hidden;
 
@@ -937,7 +937,7 @@ font-family: 'Signaturide', sans-serif;
 .badge-text {
     position: relative;
     z-index: 3;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     color: #CEA248;
     font-weight: 900;
     font-size: 1.2rem;
@@ -951,7 +951,7 @@ font-family: 'Signaturide', sans-serif;
 .combo-text-area {
     display: flex;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     color: #284A27;
     font-weight: 900;
 }
@@ -1039,7 +1039,7 @@ font-family: 'Signaturide', sans-serif;
     z-index: 10;
     position: relative;
     box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
 }
 
 .menu-item-card.card-gold { background-color: #CEA248; }
@@ -1118,7 +1118,7 @@ font-family: 'Signaturide', sans-serif;
 
 .build-text-area {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1164,7 +1164,7 @@ font-family: 'Signaturide', sans-serif;
     justify-content: center;
     align-items: center;
     gap: 15px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -1191,7 +1191,7 @@ font-family: 'Signaturide', sans-serif;
 }
 
 .about-hero-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 5rem;
     font-weight: 900;
     color: #284A27;
@@ -1227,7 +1227,7 @@ font-family: 'Signaturide', sans-serif;
 }
 
 .banner-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     color: #1c331a;
     text-align: center;
     flex: 1;
@@ -1323,7 +1323,7 @@ font-family: 'Signaturide', sans-serif;
 
 .card-title-mustard {
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.3rem;
     margin-bottom: 12px;
@@ -1333,7 +1333,7 @@ font-family: 'Signaturide', sans-serif;
 
 .card-title-light {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.6rem;
     margin-bottom: 2px;
@@ -1344,14 +1344,14 @@ font-family: 'Signaturide', sans-serif;
 
 .card-text-dark {
     color: #1c331a;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 700;
     line-height: 1.5;
 }
 
 .card-text-light {
     color: rgba(255, 240, 208, 0.85);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 700;
     line-height: 1.5;
     text-transform: uppercase;
@@ -1397,7 +1397,7 @@ font-family: 'Signaturide', sans-serif;
 .about-marquee-content {
     display: flex;
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -1490,7 +1490,7 @@ font-family: 'Signaturide', sans-serif;
 
 .timeline-title-light {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -1500,7 +1500,7 @@ font-family: 'Signaturide', sans-serif;
 
 .timeline-title-gold {
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -1510,7 +1510,7 @@ font-family: 'Signaturide', sans-serif;
 
 .timeline-text {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     text-align: center;
@@ -1529,7 +1529,7 @@ font-family: 'Signaturide', sans-serif;
 }
 
 .logo-est { color: #CEA248; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; margin: 0; }
-.logo-text { color: #CEA248; font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; margin: 10px 0; transform: scaleY(1.4); letter-spacing: 0.05em; }
+.logo-text { color: #CEA248; font-family: 'Signaturide', sans-serif; font-size: 3rem; font-weight: 900; margin: 10px 0; transform: scaleY(1.4); letter-spacing: 0.05em; }
 .logo-sub { color: #CEA248; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em; margin: 0; }
 
 /* --- POR QUE GIGI SECTION --- */
@@ -1557,7 +1557,7 @@ font-family: 'Signaturide', sans-serif;
 
 .why-title {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     margin-bottom: 20px;
@@ -1596,7 +1596,7 @@ font-family: 'Signaturide', sans-serif;
 .why-inner-text {
     text-align: center;
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 1.3rem;
     font-weight: 900;
     margin: 0;
@@ -1638,7 +1638,7 @@ font-family: 'Signaturide', sans-serif;
 
 .why-description {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
     text-align: center;
@@ -1653,7 +1653,7 @@ font-family: 'Signaturide', sans-serif;
     justify-content: space-between;
     align-items: center;
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.2rem;
     padding: 30px 5% 40px 5%;
@@ -1693,7 +1693,7 @@ font-family: 'Signaturide', sans-serif;
     }
 
     .banner-text-small{
-        font-size: 0.6rem !important;
+        font-size: 0.7rem !important;
     }
 
     .banner-text-large{
@@ -1833,7 +1833,7 @@ font-family: 'Signaturide', sans-serif;
     text-align: center;
     line-height: 1.0;
     letter-spacing: 0.2px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
 }
 
 .event-info-section {

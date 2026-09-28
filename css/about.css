@@ -1,8 +1,3 @@
-/* ============================================================
-   GIGI — ABOUT PAGE STYLES (about.css)
-   Sirf about.html ke liye. Desktop bilkul same rakha gaya hai.
-   ============================================================ */
-
 /* --- ABOUT HERO --- */
 .about-hero {
     background-color: #A5A5A5;
@@ -14,9 +9,9 @@
 }
 
 .about-hero-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'delio', sans-serif;
     font-size: 5rem;
-    font-weight: 900;
+    font-weight: 400;
     color: #284A27;
     margin-bottom: 10px;
     z-index: 1;
@@ -51,8 +46,8 @@
 }
 
 .banner-text {
-    font-family: 'Montserrat', sans-serif;
-    color: #1c331a;
+    font-family: 'Signaturide', sans-serif;
+    color: #284A27;
     text-align: center;
     flex: 1;
     display: flex;
@@ -147,7 +142,7 @@
 /* Card Typography */
 .card-title-mustard {
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.3rem;
     margin-bottom: 12px;
@@ -157,7 +152,7 @@
 
 .card-title-light {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.6rem;
     margin-bottom: 2px;
@@ -168,14 +163,14 @@
 
 .card-text-dark {
     color: #1c331a;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 700;
     line-height: 1.5;
 }
 
 .card-text-light {
     color: rgba(255, 240, 208, 0.85);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 700;
     line-height: 1.5;
     text-transform: uppercase;
@@ -200,7 +195,7 @@
 
 .about-marquee-label {
     text-align: center;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.8rem;
     font-weight: 900;
     margin: 0 0 10px 0;
@@ -252,7 +247,7 @@
     display: flex;
     flex-shrink: 0;
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -279,7 +274,7 @@
 
 .about-historia-title {
     color: #FFF0D0;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'delio', sans-serif;
     font-size: 4.5rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -348,7 +343,7 @@
 
 .timeline-title-light {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -358,7 +353,7 @@
 
 .timeline-title-gold {
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -368,7 +363,7 @@
 
 .timeline-text {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     text-align: center;
@@ -408,7 +403,7 @@
 
 .why-title {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     margin-bottom: 20px;
@@ -446,8 +441,8 @@
 .why-inner-text {
     text-align: center;
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
+    font-family: 'Signaturide', sans-serif;
+    font-size: 1rem;
     font-weight: 900;
     margin: 0;
     white-space: nowrap;
@@ -484,7 +479,7 @@
 
 .why-description {
     color: #FFF0D0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
     text-align: center;
@@ -500,7 +495,7 @@
     justify-content: space-between;
     align-items: center;
     color: #CEA248;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 900;
     font-size: 1.2rem;
     padding: 30px 5% 40px 5%;
@@ -528,9 +523,6 @@
 }
 
 
-/* ============================================================
-   MOBILE RESPONSIVE — Sirf mobile pe changes
-   ============================================================ */
 
 /* ---------- Small desktop / Tablet landscape ---------- */
 @media (max-width: 1000px) {
@@ -871,7 +863,10 @@
     .about-footer-gold { font-size: 0.82rem; }
     .footer-gold-left svg { width: 20px; height: 20px; }
 
-    
+    .banner-text{
+        gap: 0px;
+    }
+       
 }
 
 /* ---------- Very small phones ---------- */

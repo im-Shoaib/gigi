@@ -11,64 +11,10 @@
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Comfortaa:wght@700;900&family=Pacifico&family=Lobster&family=Montserrat:wght@600;700;800&family=Roboto+Slab:wght@700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css?v=2">
-</head>
-
-<body>
-
-    
-
-    <!-- Header Section -->
-    <!-- Header Section -->
-    <header class="main-header">
-        <div class="header-container">
-
-            <!-- Left: Hamburger Icon -->
-            <a href="#" class="header-icon" id="menu-btn" aria-label="Abrir menú">
-                <img src="assets/HAMBURGER.svg" alt="Menu" class="icon-img">
-            </a>
-
-            <!-- Center: Logo Image -->
-            <a href="index.html" class="header-logo" aria-label="Inicio">
-                <img src="assets/logo.svg" alt="Logo" class="logo-img">
-            </a>
-
-            <!-- Right: Popup Trigger Icon -->
-            <a href="#" class="header-icon" id="popup-btn" aria-label="Abrir información">
-                <img src="assets/PIDE.svg" alt="Info" class="icon-img">
-            </a>
-
-        </div>
-
-        <!-- Dropdown Menu -->
-        <nav class="dropdown-menu" id="dropdown">
-            <ul>
-                <li><a href="menu.html">VER CARTA</a></li>
-                <li><a href="events.html">EVENTOS</a></li>
-                <li><a href="about.html">CONÓCENOS</a></li>
-                <li><a href="contact.html">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="menu-background" style="padding-bottom: 0;">
-        <div class="menu-content-container">
-
-            <!-- SUBMENU OVER CHECKERED BACKGROUND -->
-            <nav class="submenu-container">
-                <ul class="submenu-list">
-                    <li><a href="#combos">COMBOS</a></li>
-                    <li><a href="#panuozzi">PANUOZZI</a></li>
-                    <li><a href="#build-your-own">BUILD YOUR OWN</a></li>
-                    <li><a href="#dolci">DOLCI</a></li>
-                    <li><a href="#bebidas">BEBIDAS</a></li>
-                </ul>
-            </nav>
-
-            <!-- GOLD COMBO CARD DESIGN CENTERED -->
-            <style>
+    <style>
                 :root {
                     --green-dark: #2c3f24;
-                    --gold: #e2a83a;
+                    --gold: #CEA248;
                     --gold-shadow: rgba(0, 0, 0, 0.35);
                     --cream: #f4ead0;
                     --photo-gray: #a9a9a9;
@@ -81,7 +27,7 @@
                     width: 100%;
                     padding: 50px 20px;
                     box-sizing: border-box;
-                    font-family: 'Baloo 2', sans-serif;
+                    font-family: 'Signaturide', serif;
                 }
 
                 .card-wrap {
@@ -117,7 +63,7 @@
                     position: relative;
                     z-index: 2;
                     color: var(--gold);
-                    font-family: 'Baloo 2', sans-serif;
+                    font-family: 'Signaturide', serif;
                     font-weight: 800;
                     font-size: 18px;
                     letter-spacing: 0.5px;
@@ -133,13 +79,11 @@
                     text-align: center;
                     z-index: 6;
                     margin: 0;
-                    font-family: 'Roboto Slab', serif;
+                    font-family: 'Signaturide', serif;
                     font-weight: 800;
-                    font-size: 34px;
+                    font-size: 38px;
                     letter-spacing: 2px;
                     color: var(--gold);
-                    -webkit-text-stroke: 1.8px var(--green-dark);
-                    text-shadow: 2px 2px 0 var(--green-dark);
                     line-height: 1;
                 }
 
@@ -224,6 +168,7 @@
                     margin: 0 0 4px 0;
                     padding: 0;
                     list-style: none;
+                    font-family: 'Signaturide', serif;
                     font-weight: 700;
                     font-size: 20px;
                     line-height: 1.3;
@@ -234,6 +179,7 @@
 
                 .price {
                     margin: 0;
+                    font-family: 'Signaturide', serif;
                     font-weight: 800;
                     font-size: 30px;
                     color: var(--cream);
@@ -241,12 +187,16 @@
                     text-align: center;
                 }
 
+                /* ---------- IMAGE SLOT (combo photo) ---------- */
                 .photo {
                     align-self: flex-end;
                     width: 165px;
                     height: 165px;
                     background: var(--photo-gray);
                     border-radius: 18px;
+                    object-fit: cover;
+                    object-position: center;
+                    display: block;
                 }
 
                 @media (max-width: 540px) {
@@ -265,7 +215,447 @@
                 }
             </style>
 
-            <div class="gold-card-outer">
+    <!-- ================================================================
+         CARDS STYLES (Panuozzi / Dolci / Bebidas)
+         ================================================================ -->
+    <style>
+                .custom-cards-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 80px;
+                    padding: 40px 20px;
+                    flex-wrap: wrap;
+                }
+                .custom-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 320px;
+                }
+
+                /* ---------- IMAGE SLOT ----------
+                   Grey for now, but it is a real <img>.
+                   To use a photo just change the "src". */
+                .custom-placeholder {
+                    width: 100%;
+                    height: 180px;
+                    background-color: #999999;
+                    border-radius: 20px;
+                    margin-bottom: 20px; /* Add space between placeholder and description card */
+                    z-index: 1;
+                    position: relative;
+                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
+                    object-fit: cover;
+                    object-position: center;
+                    display: block;
+                }
+
+                .custom-description {
+                    background-color: #FFF0D0;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border-radius: 20px;
+                    padding: 15px 20px;
+                    z-index: 2;
+                    position: relative;
+                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
+                    font-family: 'Signaturide', serif;
+                }
+                .custom-description.gold {
+                    background-color: #CEA248;
+                }
+                .custom-description.gold .custom-desc-header {
+                    color: #FFFFFF;
+                }
+                .custom-description.gold .custom-ingredient {
+                    color: #FFFFFF;
+                }
+                .custom-description.gold .custom-ingredient::before {
+                    background-color: #284A27;
+                }
+                .custom-description.gold .custom-price {
+                    color: #284A27;
+                }
+                .custom-desc-header {
+                    text-align: center;
+                    font-family: 'Signaturide', serif;
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: #284A27;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .custom-desc-body {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                }
+                .custom-ingredients-col {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+
+                /* ---------- INGREDIENTS: keep the original sans-serif ---------- */
+                .custom-ingredient {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    display: flex;
+                    align-items: center;
+                }
+                .custom-ingredient::before {
+                    content: '';
+                    display: inline-block;
+                    width: 5px;
+                    height: 5px;
+                    background-color: #CEA248;
+                    border-radius: 50%;
+                    margin-right: 6px;
+                }
+                .custom-price-col {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                }
+                .custom-price {
+                    font-family: 'Signaturide', serif;
+                    font-size: 1.8rem;
+                    font-weight: 900;
+                    color: #CEA248;
+                    line-height: 1;
+                    margin-top: 5px;
+                }
+                .ingredient-row {
+                    display: flex;
+                    gap: 15px;
+                }
+                
+                .custom-cards-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 80px;
+                    padding: 40px 20px;
+                    flex-wrap: wrap;
+                }
+                .custom-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 320px;
+                }
+
+                .custom-placeholder {
+                    width: 100%;
+                    height: 180px;
+                    background-color: #999999;
+                    border-radius: 20px;
+                    margin-bottom: 20px;
+                    z-index: 1;
+                    position: relative;
+                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
+                    object-fit: cover;
+                    object-position: center;
+                    display: block;
+                }
+
+                .custom-description {
+                    background-color: #FFF0D0;
+                    width: 100%;
+                    box-sizing: border-box;
+                    border-radius: 20px;
+                    padding: 15px 20px;
+                    z-index: 2;
+                    position: relative;
+                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
+                    font-family: 'Signaturide', serif;
+                }
+                .custom-description.gold {
+                    background-color: #CEA248;
+                }
+                .custom-description.gold .custom-desc-header {
+                    color: #FFFFFF;
+                }
+                .custom-description.gold .custom-ingredient {
+                    color: #FFFFFF;
+                }
+                .custom-description.gold .custom-ingredient::before {
+                    background-color: #284A27;
+                }
+                .custom-description.gold .custom-price {
+                    color: #284A27;
+                }
+                .custom-desc-header {
+                    text-align: center;
+                    font-family: 'Signaturide', serif;
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                    color: #284A27;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .custom-desc-body {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                }
+                .custom-ingredients-col {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .custom-ingredient {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    display: flex;
+                    align-items: center;
+                }
+                .custom-ingredient::before {
+                    content: '';
+                    display: inline-block;
+                    width: 5px;
+                    height: 5px;
+                    background-color: #CEA248;
+                    border-radius: 50%;
+                    margin-right: 6px;
+                }
+                .custom-price-col {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                }
+                .custom-price {
+                    font-family: 'Signaturide', serif;
+                    font-size: 1.8rem;
+                    font-weight: 900;
+                    color: #CEA248;
+                    line-height: 1;
+                    margin-top: 5px;
+                }
+                .ingredient-row {
+                    display: flex;
+                    gap: 15px;
+                }
+
+                /* ---------- Sticky submenu + smooth scroll ---------- */
+                html {
+                    scroll-behavior: smooth;
+                }
+
+                #combos,
+                #panuozzi,
+                #build-your-own,
+                #dolci,
+                #bebidas {
+                    scroll-margin-top: 200px;
+                }
+
+                .submenu-container {
+                    position: -webkit-sticky;
+                    position: sticky;
+                    top: 120px;
+                    z-index: 900;
+                }
+
+                .dropdown-menu a,
+                .submenu-list a,
+                .build-text-area,
+                .build-title,
+                .build-subtitle,
+                .build-elije,
+                .build-options,
+                .sec3-footer-left,
+                .sec3-footer-center,
+                .sec3-footer-right {
+                    font-family: 'Signaturide', serif;
+                }
+
+                .custom-desc-icon {
+    height: 24px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Left icon is mirrored so the two face each other */
+.custom-desc-header .custom-desc-icon:first-child {
+    transform: scaleX(-1);
+}
+
+@media (max-width: 420px) {
+    .custom-desc-icon { height: 18px; }
+}
+
+                @media (max-width: 768px) {
+                    .submenu-container {
+                        top: 60px;
+                    }
+
+                    #combos,
+                    #panuozzi,
+                    #build-your-own,
+                    #dolci,
+                    #bebidas {
+                        scroll-margin-top: 240px;
+                    }
+
+                    .submenu-list {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 8px;
+                        width: 100%;
+                        padding: 8px;
+                        background-color: transparent;
+                        border-radius: 0;
+                        box-shadow: none;
+                    }
+
+                    .submenu-list li {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .submenu-list li:nth-child(5) {
+                        grid-column: 1 / -1;
+                    }
+
+                    .submenu-list a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        background-color: #FFF0D0;
+                        color: #284A27;
+                        font-size: 0.85rem;
+                        padding: 10px 8px;
+                        border-radius: 50px;
+                        box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.35);
+                        text-align: center;
+                        line-height: 1.1;
+                        transition: color 0.25s ease;
+                    }
+
+                    .submenu-list li:nth-child(5) a {
+                        max-width: 60%;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .custom-cards-container {
+                        gap: 40px;
+                        padding: 30px 15px;
+                    }
+                    .custom-card {
+                        width: 100%;
+                        max-width: 320px;
+                    }
+                    .gold-card-outer {
+                        padding: 0px 0px;
+                        transform: scale(0.8);
+                    }
+
+                    .combo-badge{
+                        left: -75px;
+                    }
+
+                    .brand-above {
+                        font-size: 28px;
+                        top: 10px;
+                        left: 0;
+                    }
+
+                    .card-content {
+                        padding: 14px 16px 14px 16px;
+                    }
+                }
+
+                /* ---------- small phones ---------- */
+                @media (max-width: 420px) {
+                    .custom-cards-container {
+                        gap: 40px;
+                        padding: 30px 15px;
+                    }
+                    .custom-card {
+                        width: 100%;
+                        max-width: 320px;
+                    }
+                }
+
+               
+.custom-desc-header.chilli-header .custom-desc-icon:first-child {
+    transform: none;
+}
+
+.custom-desc-header.chilli-header .custom-desc-icon:last-child {
+    transform: scaleX(-1);
+}
+            </style>
+</head>
+
+<body>
+
+    
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+
+            <!-- Left: Hamburger Icon -->
+            <a href="#" class="header-icon" id="menu-btn" aria-label="Abrir menú">
+                <img src="assets/HAMBURGER.svg" alt="Menu" class="icon-img">
+            </a>
+
+            <!-- Center: Logo Image -->
+            <a href="index.html" class="header-logo" aria-label="Inicio">
+                <img src="assets/logo.svg" alt="Logo" class="logo-img">
+            </a>
+
+            <!-- Right: Popup Trigger Icon -->
+            <a href="#" class="header-icon" id="popup-btn" aria-label="Abrir información">
+                <img src="assets/PIDE.svg" alt="Info" class="icon-img">
+            </a>
+
+        </div>
+
+        <!-- Dropdown Menu -->
+        <nav class="dropdown-menu" id="dropdown">
+            <ul>
+                <li><a href="menu.html">VER CARTA</a></li>
+                <li><a href="events.html">EVENTOS</a></li>
+                <li><a href="about.html">CONÓCENOS</a></li>
+                <li><a href="contact.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="menu-background" style="padding-bottom: 0;">
+        <div class="menu-content-container">
+
+            <!-- SUBMENU OVER CHECKERED BACKGROUND (sticky + smooth scroll) -->
+            <nav class="submenu-container">
+                <ul class="submenu-list">
+                    <li><a href="#combos">COMBOS</a></li>
+                    <li><a href="#panuozzi">PANUOZZI</a></li>
+                    <li><a href="#build-your-own">BUILD YOUR OWN</a></li>
+                    <li><a href="#dolci">DOLCI</a></li>
+                    <li><a href="#bebidas">BEBIDAS</a></li>
+                </ul>
+            </nav>
+
+
+            <!-- GOLD COMBO CARD DESIGN CENTERED -->
+            <div class="gold-card-outer" id="combos">
                 <div class="card-wrap">
 
                     <div class="combo-badge">
@@ -296,125 +686,27 @@
                             </ul>
                             <p class="price">11.9€</p>
                         </div>
-                        <div class="photo"></div>
+                        <!-- IMAGE SLOT: combo -->
+                        <img class="photo"
+                             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                             alt="Combo GIGI" loading="lazy">
                     </div>
 
                 </div>
             </div>
 
-            <style>
-                .custom-cards-container {
-                    display: flex;
-                    justify-content: center;
-                    gap: 80px;
-                    padding: 40px 20px;
-                    flex-wrap: wrap;
-                }
-                .custom-card {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 320px;
-                }
-                .custom-placeholder {
-                    width: 100%;
-                    height: 180px;
-                    background-color: #999999;
-                    border-radius: 20px;
-                    margin-bottom: 20px; /* Add space between placeholder and description card */
-                    z-index: 1;
-                    position: relative;
-                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
-                }
-                .custom-description {
-                    background-color: #FFF0D0;
-                    width: 100%;
-                    box-sizing: border-box;
-                    border-radius: 20px;
-                    padding: 15px 20px;
-                    z-index: 2;
-                    position: relative;
-                    box-shadow: -8px 8px 15px rgba(0,0,0,0.2);
-                    font-family: 'Montserrat', sans-serif;
-                }
-                .custom-description.gold {
-                    background-color: #CEA248;
-                }
-                .custom-description.gold .custom-desc-header {
-                    color: #FFFFFF;
-                }
-                .custom-description.gold .custom-ingredient {
-                    color: #FFFFFF;
-                }
-                .custom-description.gold .custom-ingredient::before {
-                    background-color: #284A27;
-                }
-                .custom-description.gold .custom-price {
-                    color: #284A27;
-                }
-                .custom-desc-header {
-                    text-align: center;
-                    font-size: 1.5rem;
-                    font-weight: 800;
-                    color: #284A27;
-                    margin-bottom: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 10px;
-                }
-                .custom-desc-body {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-end;
-                }
-                .custom-ingredients-col {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                }
-                .custom-ingredient {
-                    font-size: 0.75rem;
-                    font-weight: 700;
-                    color: #1a1a1a;
-                    display: flex;
-                    align-items: center;
-                }
-                .custom-ingredient::before {
-                    content: '';
-                    display: inline-block;
-                    width: 5px;
-                    height: 5px;
-                    background-color: #CEA248;
-                    border-radius: 50%;
-                    margin-right: 6px;
-                }
-                .custom-price-col {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    justify-content: flex-end;
-                }
-                .custom-price {
-                    font-size: 1.8rem;
-                    font-weight: 900;
-                    color: #CEA248;
-                    line-height: 1;
-                    margin-top: 5px;
-                }
-                .ingredient-row {
-                    display: flex;
-                    gap: 15px;
-                }
-            </style>
-
-            <div class="custom-cards-container">
+            <!-- ============================ PANUOZZI ============================ -->
+            <div class="custom-cards-container" id="panuozzi">
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Caprese" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
-                            <span>🌿</span> CAPRESE <span>🌿</span>
-                        </div>
+    <img src="assets/herb.png" alt="" class="custom-desc-icon">
+    CAPRESE
+    <img src="assets/herb.png" alt="" class="custom-desc-icon">
+</div>
                         <div class="custom-desc-body">
                             <div class="custom-ingredients-col">
                                 <div class="ingredient-row">
@@ -432,7 +724,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Classico" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
                             CLASSICO
@@ -454,11 +748,15 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Giardino" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
-                            <span>🌿</span> GIARDINO <span>🌿</span>
-                        </div>
+    <img src="assets/herb.png" alt="" class="custom-desc-icon">
+    GIARDINO
+    <img src="assets/herb.png" alt="" class="custom-desc-icon">
+</div>
                         <div class="custom-desc-body">
                             <div class="custom-ingredients-col">
                                 <div class="ingredient-row">
@@ -480,7 +778,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Cesare" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
                             CESARE
@@ -501,12 +801,17 @@
                     </div>
                 </div>
 
+                
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Dante" loading="lazy">
                     <div class="custom-description">
-                        <div class="custom-desc-header">
-                            <span>🌿</span> DANTE <span>🌿</span>
-                        </div>
+                        <div class="custom-desc-header chilli-header">
+    <img src="assets/chilli.png" alt="" class="custom-desc-icon">
+    DANTE
+    <img src="assets/chilli.png" alt="" class="custom-desc-icon">
+</div>  
                         <div class="custom-desc-body">
                             <div class="custom-ingredients-col">
                                 <div class="ingredient-row">
@@ -527,7 +832,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Crazy Nonna" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
                             CRAZY NONNA
@@ -549,7 +856,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Carbonara" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
                             CARBONARA
@@ -572,7 +881,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Vitello Tonnato" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
                             VITELLO TONNATO
@@ -591,7 +902,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="New Yorker" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
                             NEW YORKER
@@ -613,7 +926,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Giulia" loading="lazy">
                     <div class="custom-description">
                         <div class="custom-desc-header">
                             GIULIA
@@ -645,14 +960,20 @@
                             <span style="text-align: center;">TOPPING - SALSA</span>
                         </div>
                     </div>
-                    <div class="build-image-placeholder" style="height: 220px;"></div>
+                    <!-- IMAGE SLOT: build your own -->
+                    <img class="build-image-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Build your own" loading="lazy"
+                         style="height: 220px;">
                 </div>
             </section>
 
-            <!-- Dolci Section -->
-            <div class="custom-cards-container">
+            <!-- ============================ DOLCI ============================ -->
+            <div class="custom-cards-container" id="dolci">
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Di Nutella" loading="lazy">
                     <div class="custom-description gold">
                         <div class="custom-desc-header">
                             DI NUTELLA
@@ -672,7 +993,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Pistacchio" loading="lazy">
                     <div class="custom-description gold">
                         <div class="custom-desc-header">
                             PISTACCHIO
@@ -691,7 +1014,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Tiramisu" loading="lazy">
                     <div class="custom-description gold" style="min-height: 120px;">
                         <div class="custom-desc-header">
                             TIRAMISU
@@ -713,7 +1038,9 @@
                 </div>
 
                 <div class="custom-card">
-                    <div class="custom-placeholder"></div>
+                    <img class="custom-placeholder"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Crect width='1' height='1' fill='%23999'/%3E%3C/svg%3E"
+                         alt="Tarta de queso" loading="lazy">
                     <div class="custom-description gold" style="min-height: 120px;">
                         <div class="custom-desc-header">
                             TARTA DE QUESO
@@ -731,30 +1058,30 @@
                 </div>
             </div>
 
-            <!-- Bebidas Section -->
-            <div class="custom-cards-container" style="max-width: 700px; margin: 0 auto; gap: 40px 80px;">
+            <!-- ============================ BEBIDAS ============================ -->
+            <div class="custom-cards-container" id="bebidas" style="max-width: 700px; margin: 0 auto; gap: 40px 80px;">
                 <div class="custom-card" style="width: 250px;">
                     <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
-                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">AGUA</div>
-                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.7rem;">AGUA</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.75rem;">7.30€</div>
                     </div>
                 </div>
                 <div class="custom-card" style="width: 250px;">
                     <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
-                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">REFRESCOS</div>
-                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.7rem;">REFRESCOS</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.75rem;">7.30€</div>
                     </div>
                 </div>
                 <div class="custom-card" style="width: 250px;">
                     <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
-                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">CERVEZA</div>
-                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.7rem;">CERVEZA</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.75rem;">7.30€</div>
                     </div>
                 </div>
                 <div class="custom-card" style="width: 250px;">
                     <div class="custom-description" style="text-align: center; display: flex; flex-direction: column; align-items: center; padding: 8px 20px;">
-                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.3rem;">SPRITZ</div>
-                        <div class="custom-price" style="margin-top: 0; font-size: 1.15rem;">7.30€</div>
+                        <div class="custom-desc-header" style="margin-bottom: 0; font-size: 1.7rem;">SPRITZ</div>
+                        <div class="custom-price" style="margin-top: 0; font-size: 1.75rem;">7.30€</div>
                     </div>
                 </div>
             </div>
@@ -762,24 +1089,24 @@
         </div>
 
         <!-- Footer Row -->
-        <div class="sec3-footer" style="background: rgba(40, 74, 39, 0.28); border-radius: 16px; width: 100%; max-width: 1200px; margin: 40px auto 0 auto; justify-content: space-between; padding: 20px 24px 10px 24px;">
+        <div class="sec3-footer">
             <!-- Instagram Link -->
             <a href="#" class="sec3-footer-left">
-                <svg class="sec3-ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="sec3-ig-icon" style="color: #CEA248; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
-                <span>@GIGIPANUOZZI</span>
+                <span style="color: #CEA248; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">@GIGIPANUOZZI</span>
             </a>
 
             <!-- Center Text -->
-            <div class="sec3-footer-center">
+            <div class="sec3-footer-center" style="color: #CEA248; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
                 GIGI ITALIAN FOOD SL ®
             </div>
 
             <!-- Right Text -->
-            <div class="sec3-footer-right">
+            <div class="sec3-footer-right" style="color: #CEA248; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
                 <span>CREATIVE BY:</span>
                 <span>SEBASTIAN ADAMES</span>
             </div>

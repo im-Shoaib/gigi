@@ -9,12 +9,22 @@
     --text-color: #FFF0D0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
+
 @font-face {
-    font-family: 'Signaturide';
-    src: url('../fonts/signaturide-sans.woff2') format('woff2');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Signaturide';        
+  src: url('../fonts/Signaturide-Sans.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;          
+}
+
+@font-face {
+  font-family: 'Delio';
+  src: url('../fonts/Delio-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* Reset default browser margins */
@@ -22,7 +32,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 html, body {
@@ -30,6 +39,7 @@ html, body {
     padding: 0;
     width: 100%;
     background-color: #999999;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* --- Sticky Header (Fixed to top) --- */
@@ -369,7 +379,7 @@ html, body {
 
 /* section 2 start  */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
+
 
 .sec2-container {
   width: 100%;
@@ -505,9 +515,9 @@ html, body {
 .sec2-vertical-text {
   writing-mode: vertical-rl;
   text-transform: uppercase;
-  color: #FFF0D0;
+  color: #fff0d0d9;
   font-size: 56px;
-  font-family: 'Signaturide', sans-serif;
+  font-family: 'Delio', sans-serif;
   font-weight: 900;
   letter-spacing: 2px;
   line-height: 1.1;
@@ -544,6 +554,7 @@ html, body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   line-height: 1.2;
+  font-family: 'Signaturide', sans-serif;
 }
 
 .sec2-hours-line3 {
@@ -552,6 +563,7 @@ html, body {
   font-weight: 900;
   letter-spacing: 1px;
   margin-top: 4px;
+  font-family: 'Signaturide', sans-serif;
 }
 
 @media (max-width: 1100px) {
@@ -707,16 +719,17 @@ html, body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #CEA248;
+  color: #284A27;
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 1px;
+  font-family: 'Signaturide', sans-serif;
 }
 
 .sec3-ig-icon {
   width: 28px;
   height: 28px;
-  color: #CEA248;
+  color: #284A27;
 }
 
 .sec3-footer-center {
@@ -724,19 +737,21 @@ html, body {
   font-weight: 900;
   letter-spacing: 1px;
   text-align: center;
-  color: #CEA248;
+  color: #284A27;
+  font-family: 'Signaturide', sans-serif;
 }
 
 .sec3-footer-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  font-size: 18px;
+  align-items: center;
+  font-size: 22px;
   font-weight: 900;
   line-height: 1.15;
   letter-spacing: 1px;
   text-align: right;
-  color: #CEA248;
+  color: #284A27;
+font-family: 'Signaturide', sans-serif;
 }
 
 @media (max-width: 900px) {
@@ -832,13 +847,14 @@ html, body {
 }
 
 .submenu-list {
+    width: 90%;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     background-color: #FFF0D0;
-    padding: 10px 30px;
+    padding: 10px;
     border-radius: 40px;
     box-shadow: -4px 4px 0px rgba(0, 0, 0, 0.45);
 }
@@ -846,9 +862,9 @@ html, body {
 .submenu-list a {
     text-decoration: none;
     color: #284A27;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     padding: 5px 10px;
     transition: color 0.3s;
 }
@@ -1110,7 +1126,7 @@ html, body {
 }
 
 .build-title { font-size: 1.6rem; font-weight: 800; text-align: center; }
-.build-subtitle { font-size: 1.1rem; font-weight: 400; margin-bottom: 10px; text-align: center; }
+.build-subtitle { font-size: 0.9rem; font-weight: 400; margin-bottom: 10px; text-align: center; }
 .build-elije { font-size: 1.6rem; font-weight: 700; color: #CEA248; margin-bottom: 6px; text-align: center; }
 
 .build-options {
@@ -1741,7 +1757,7 @@ html, body {
     border-radius: 50px;
     padding: 10px 45px;
     box-shadow: 0px 6px 14px rgba(40, 74, 39, 0.4);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     color: #284A27;
@@ -1828,7 +1844,7 @@ html, body {
 }
 
 .event-info-title-1, .event-info-title-2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 1.85rem;
     font-weight: 900;
     color: #284A27;
@@ -1838,7 +1854,7 @@ html, body {
 }
 
 .event-info-subtitle {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 1.65rem;
     font-weight: 900;
     color: #CEA248;
@@ -1939,7 +1955,7 @@ html, body {
 }
 
 .temporada-subtitle-1, .temporada-subtitle-2 {
-    font-family: 'Comfortaa', 'Montserrat', sans-serif;
+    font-family: 'Signaturide', sans-serif;
     font-size: 1.85rem;
     font-weight: 900;
     color: #284A27;
@@ -1974,4 +1990,10 @@ html, body {
     .polaroid-card-wrapper.card-left { left: -20px; top: 15px; }
     .polaroid-card-wrapper.card-right { right: -20px; top: 15px; }
     .ping-pong-container { height: 220px; }
+    .cal-cell {
+            aspect-ratio: auto;
+    }
+    .pill-banner{
+        width: 85%;
+    }
 }

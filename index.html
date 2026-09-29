@@ -7,7 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700;900&family=Pacifico&family=Lobster&family=Montserrat:wght@600;700;800&family=Roboto+Slab:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2">
+        <link rel="stylesheet" href="css/style.css?v=2">
+    <script>
+        try {
+            if (localStorage.getItem('gigi_intro_seen') === '1') {
+                document.documentElement.classList.add('intro-seen');
+            }
+        } catch (e) {}
+    </script>
+</head>
     
 </head> 
 <body class="home-loading">

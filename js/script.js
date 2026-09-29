@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
 
         
         setTimeout(() => landing.remove(), 2800);
-    }, 5000);
+    }, 4000);
 });
 
 document.addEventListener('DOMContentLoaded', () => {

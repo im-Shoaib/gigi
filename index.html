@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css?v=2">
     
 </head> 
-<body>
+<body class="home-loading">
 
         <div class="landing-overlay" id="landing-overlay">
         <img src="assets/landing_logo.svg" alt="Logo" class="landing-logo">
@@ -67,7 +67,7 @@
   <div class="sec2-left-area">
     <!-- Top Left Box (Self-made Card with editable text number + pattern image) -->
     <div class="sec2-phone-box">
-      <div class="sec2-phone-number">637 683 347</div>
+            <div class="sec2-phone-number"><a href="tel:637683347" aria-label="Llamar a GIGI">637 683 347</a></div>
       <div class="sec2-phone-pattern-box">
         <img src="assets/boxed.svg" alt="Pattern" class="sec2-phone-pattern-img">
       </div>
@@ -81,13 +81,19 @@
 
   <!-- Center Area (Map Card Image with Overlay) -->
   <div class="sec2-center-area">
-    <a href="https://www.google.com/maps/place/Carrer+de+Sant+Vicent+M%C3%A0rtir,+41,+Ciutat+Vella,+46002+Val%C3%A8ncia/@39.471078,-0.3801052,681m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd604f4c648e4af9:0xb3babafc8f987ec6!8m2!3d39.471078!4d-0.3775303!16s%2Fg%2F11nnkmzxbb?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
+   <a href="https://www.google.com/maps/place/Carrer+de+Sant+Vicent+M%C3%A0rtir,+41,+Ciutat+Vella,+46002+Val%C3%A8ncia/@39.471078,-0.3801052,681m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd604f4c648e4af9:0xb3babafc8f987ec6!8m2!3d39.471078!4d-0.3775303!16s%2Fg%2F11nnkmzxbb?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D"
    target="_blank"
    rel="noopener noreferrer"
    class="sec2-map-box"
    aria-label="Abrir ubicación en Google Maps">
     <img src="assets/MAP.svg" alt="Map Location" class="sec2-map-img">
     <img src="assets/logo.svg" alt="Map Pin Overlay" class="sec2-map-overlay-img">
+    <span class="map-hint-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+        </svg>
+    </span>
 </a>
   </div>
 
@@ -125,7 +131,7 @@
   <!-- Footer Row -->
   <div class="sec3-footer">
     <!-- Instagram Link -->
-    <a href="#" class="sec3-footer-left">
+        <a href="https://instagram.com/gigipanuozzi" target="_blank" rel="noopener noreferrer" class="sec3-footer-left">
       <svg class="sec3-ig-icon" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -165,6 +171,44 @@
                 <img src="assets/uber-eats.png" alt="Promo" class="modal-center-img">
             </div>
             
+        </div>
+    </div>
+
+    <!-- ==================== GIGI SIGNUP MODAL ==================== -->
+    <div id="gigiSignupModal" class="gigi-signup-backdrop" data-page="home" onclick="handleSignupBackdropClick(event)">
+        <div class="gigi-signup-card" role="dialog" aria-modal="true" aria-labelledby="gigiSignupTitle">
+            <button type="button" class="gigi-signup-close" onclick="closeSignupModal()" aria-label="Cerrar modal">✕</button>
+
+            <h2 id="gigiSignupTitle" class="gigi-signup-title">ÚNETE A GIGI!</h2>
+            <p class="gigi-signup-subtitle">
+                RECIBE DESCUENTOS, AVISOS SOBRE PANUOZZOS DE TEMPORADA Y NUEVAS INCORPORACIONES DE PRODUCTOS A NUESTRA DISPENSA
+            </p>
+
+            <form id="gigiSignupForm" class="gigi-signup-form" onsubmit="handleSignupSubmit(event)">
+                <div class="gigi-signup-input-wrap">
+                    <input
+                        type="email"
+                        id="gigiSignupEmail"
+                        class="gigi-signup-input"
+                        placeholder="INTRODUCE TU CORREO ELECTRÓNICO..."
+                        autocomplete="email"
+                        required
+                    />
+                    <button type="submit" class="gigi-signup-submit" aria-label="Enviar correo">
+                        <svg viewBox="0 0 24 24" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="gigiSignupFeedback" class="gigi-signup-feedback"></div>
+            </form>
+
+            <div id="gigiSignupSuccess" class="gigi-signup-success" style="display:none;">
+                <div class="gigi-signup-check">✓</div>
+                <p class="gigi-signup-success-title">¡TE HAS UNIDO CON ÉXITO!</p>
+                <p class="gigi-signup-success-sub">Revisa tu bandeja de entrada para recibir tu sorpresa de bienvenida.</p>
+                <button type="button" class="gigi-signup-reset" onclick="resetSignupModal()">Volver a probar</button>
+            </div>
         </div>
     </div>
 

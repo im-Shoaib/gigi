@@ -596,6 +596,10 @@
         align-items: stretch !important;
     }
 
+    .about-row-2{
+        flex-direction: column-reverse !important;
+    }
+
     .about-row-1 .about-card-light,
     .about-row-1 .about-placeholder,
     .about-row-2 .about-placeholder,
